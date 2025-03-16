@@ -28,7 +28,9 @@ canvas_result = st_canvas(
 if st.button("Predict"):
     if canvas_result.image_data is not None:
         # Preprocess the image
+        
         img=canvas_result.image_data
+        img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
         img = cv2.resize(img, (28, 28))  # Resize to 28x28 for MNIST model
         img = img / 255.0  # Normalize pixel values
         img = img.reshape(1, 28, 28, 3)  # Add batch and channel dimensions
