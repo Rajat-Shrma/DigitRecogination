@@ -15,10 +15,9 @@ st.write("Draw a digit in the box below and click 'Predict' to see the result.")
 from streamlit_drawable_canvas import st_canvas
 
 canvas_result = st_canvas(
-    fill_color="black",  # Background color
     stroke_width=20,     # Pen thickness
     stroke_color="white",  # Pen color
-    background_color="white",
+    background_color="black",
     width=400,
     height=400,
     drawing_mode="freedraw",
