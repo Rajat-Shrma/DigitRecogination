@@ -1,7 +1,7 @@
 streamlit>=1.0,<2.0
 numpy>=1.20,<2.0
-tensorflow>=2.10,<2.20
+tensorflow>=2.10,<=2.15.1
 keras>=2.10,<3.0
 pillow
-cv2
+opencv-python
 streamlit_drawable_canvas
