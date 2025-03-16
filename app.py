@@ -4,8 +4,7 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import cv2
 
-# Load the pre-trained model
-model = load_model("model.h5")
+
 
 # Set up the Streamlit app
 st.title("Digit Recognition App")
@@ -25,6 +24,8 @@ canvas_result = st_canvas(
 )
 
 # Process the input and predict
+model = load_model("model.h5")
+
 if st.button("Predict"):
     if canvas_result.image_data is not None:
         # Preprocess the image
@@ -43,3 +44,4 @@ if st.button("Predict"):
         st.write(f"Predicted Digit: {digit}")
     else:
         st.write("Please draw a digit in the box above.")
+# Load the pre-trained model
