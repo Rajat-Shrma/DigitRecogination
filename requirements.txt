@@ -1,7 +1,7 @@
-streamlit
-numpy 
-tensorflow
-keras
-PIL
+streamlit>=1.0,<2.0
+numpy>=1.20,<2.0
+tensorflow>=2.10,<2.20
+keras>=2.10,<3.0
+pillow
 cv2
 streamlit_drawable_canvas
