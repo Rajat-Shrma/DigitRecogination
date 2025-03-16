@@ -15,12 +15,12 @@ st.write("Draw a digit in the box below and click 'Predict' to see the result.")
 from streamlit_drawable_canvas import st_canvas
 
 canvas_result = st_canvas(
-    fill_color="white",  # Background color
-    stroke_width=10,     # Pen thickness
-    stroke_color="black",  # Pen color
+    fill_color="black",  # Background color
+    stroke_width=20,     # Pen thickness
+    stroke_color="white",  # Pen color
     background_color="white",
-    width=200,
-    height=200,
+    width=400,
+    height=400,
     drawing_mode="freedraw",
     key="canvas",
 )
@@ -29,7 +29,6 @@ canvas_result = st_canvas(
 if st.button("Predict"):
     if canvas_result.image_data is not None:
         # Preprocess the image
-        img = cv2.cvtColor(canvas_result.image_data.astype("uint8"), cv2.COLOR_BGR2GRAY)
         img = cv2.resize(img, (28, 28))  # Resize to 28x28 for MNIST model
         img = img / 255.0  # Normalize pixel values
         img = img.reshape(1, 28, 28, 1)  # Add batch and channel dimensions
