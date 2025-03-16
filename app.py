@@ -24,7 +24,10 @@ canvas_result = st_canvas(
 )
 
 # Process the input and predict
-model = load_model("model.h5")
+try:
+    model = load_model("model.h5")
+except Exception as e:
+    model = load_model("model.h5")
 
 if st.button("Predict"):
     if canvas_result.image_data is not None:
