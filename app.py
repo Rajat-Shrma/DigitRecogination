@@ -34,7 +34,7 @@ if st.button("Predict"):
         img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
         img = cv2.resize(img, (28, 28))  # Resize to 28x28 for MNIST model
         img = img / 255.0  # Normalize pixel values
-        img = img.reshape(1, 28, 28, 3)  # Add batch and channel dimensions
+        img = img.reshape(1, 28, 28, 1)  # Add batch and channel dimensions
         
         # Predict the digit
         prediction = model.predict(img)
